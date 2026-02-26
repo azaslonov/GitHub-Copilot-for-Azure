@@ -2,7 +2,7 @@
 
 This document contains patterns for configuring Azure API Management as an AI Gateway for AI models, MCP tools, and agents.
 
-> **For deploying a new APIM instance**, see the [azure-deploy skill](../../azure-deploy/reference/apim.md).
+> **For deploying a new APIM instance**, see the [azure-prepare skill](../../azure-prepare/references/apim.md).
 
 ---
 

@@ -97,15 +97,15 @@ Look for these files first (HIGH confidence signals):
 
 | User Request | Recommendation | Action |
 |--------------|----------------|--------|
-| "Deploy APIM", "create API Management", "API gateway" | Deploy API Management | **See [APIM Deployment Guide](./reference/apim.md)** |
-| "AI gateway", "configure AI model", "add Azure OpenAI backend" | AI Gateway configuration | Deploy with **[APIM Guide](./reference/apim.md)**, configure with **azure-aigateway skill** |
+| "Deploy APIM", "create API Management", "API gateway" | Deploy API Management | **See [APIM Deployment Guide](../../azure-prepare/references/apim.md)** |
+| "AI gateway", "configure AI model", "add Azure OpenAI backend" | AI Gateway configuration | Deploy with **[APIM Guide](../../azure-prepare/references/apim.md)**, configure with **azure-aigateway skill** |
 
 > 💡 **When to use API Management:**
 > - User wants to expose APIs with policies (rate limiting, auth, caching)
 > - User needs an AI Gateway for Azure OpenAI or AI Foundry models
 > - User mentions APIM, API Management, or API gateway
 > 
-> **📖 See [APIM Deployment Guide](./reference/apim.md)** for deployment, then use **azure-aigateway skill** for AI-specific configuration.
+> **📖 See [APIM Deployment Guide](../../azure-prepare/references/apim.md)** for deployment, then use **azure-aigateway skill** for AI-specific configuration.
 
 **When `azure.yaml` is found, validate before deployment:**
 ```javascript
@@ -813,7 +813,7 @@ For specialized deployment scenarios, use these comprehensive reference guides:
 - **⚡ [Azure Functions Deployment Guide](./reference/functions.md)** - Azure Functions deployment with func CLI, triggers/bindings, deployment slots, and function-specific troubleshooting
 - **☸️ [AKS Deployment Guide](./reference/aks.md)** - Kubernetes deployments with full control, custom operators, and complex microservices
 - **🌍 [App Service Deployment Guide](./reference/app-service.md)** - Traditional web applications and REST APIs with managed hosting
-- **🔌 [APIM Deployment Guide](./reference/apim.md)** - API Management deployment for API Gateway and AI Gateway scenarios with Basicv2 SKU
+- **🔌 [APIM Deployment Guide](../../azure-prepare/references/apim.md)** - API Management deployment for API Gateway and AI Gateway scenarios with Basicv2 SKU
 
 ---
 
@@ -824,7 +824,7 @@ Load these guides as needed for detailed information:
 - [Azure Functions Guide](./reference/functions.md) - Serverless Functions deployment with func CLI, triggers/bindings, deployment slots, and monitoring
 - [AKS Guide](./reference/aks.md) - Kubernetes deployment with AKS, node pools, workload identity, scaling, and networking
 - [App Service Guide](./reference/app-service.md) - Traditional web app deployment with App Service plans, deployment slots, and auto-scaling
-- [APIM Guide](./reference/apim.md) - API Management deployment for API gateway and AI gateway, with Basicv2 SKU for fast deployment
+- [APIM Guide](../../azure-prepare/references/apim.md) - API Management deployment for API gateway and AI gateway, with Basicv2 SKU for fast deployment
 - Always scan the workspace before generating a deployment plan
 - Plans integrate with Azure Developer CLI (azd)
 - Logs require resources deployed through azd

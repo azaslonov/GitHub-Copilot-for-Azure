@@ -2,13 +2,8 @@
 name: azure-aigateway
 description: >-
   Configure Azure API Management as an AI Gateway for AI models, MCP tools, and agents.
-  Use this skill for: (1) AI-specific policies (semantic caching, token limits, content safety, load balancing),
-  (2) Governance of AI models (cost control, usage metrics), MCP tools (rate limiting), and agents (jailbreak detection),
-  (3) Adding AI backends from Azure OpenAI or AI Foundry, (4) Testing AI endpoints through the gateway.
-  For deploying APIM or general API policies, use the azure-deploy skill.
-  Trigger phrases: "configure my model", "configure my tool", "add Azure OpenAI backend", "add AI Foundry model",
-  "semantic caching", "token limits", "content safety", "protect my AI model", "rate limit MCP", "jailbreak detection",
-  "test AI gateway", "AI governance", "LLM policies", "add model to gateway", "configure AI backend".
+  USE FOR: semantic caching, token limits, content safety, load balancing, AI model governance, MCP rate limiting, jailbreak detection, add Azure OpenAI backend, add AI Foundry model, test AI gateway, LLM policies, configure AI backend, token metrics, AI cost control.
+  DO NOT USE FOR: deploying APIM (use azure-prepare), general API policies (use azure-deploy), creating new APIM instance (use azure-prepare).
 metadata:
   author: microsoft
   version: "3.0"
@@ -19,7 +14,7 @@ compatibility: Requires Azure CLI (az) for configuration and testing
 
 Configure Azure API Management (APIM) as an AI Gateway for governing AI models, MCP tools, and agents.
 
-> **To deploy APIM**, use the **azure-deploy** skill.
+> **To deploy APIM**, use the **azure-prepare** skill.
 
 ## When to Use This Skill
 
@@ -30,38 +25,6 @@ Configure Azure API Management (APIM) as an AI Gateway for governing AI models, 
 | **Agent Governance** | "content safety", "jailbreak detection", "filter harmful content" |
 | **Configuration** | "add Azure OpenAI backend", "configure my model", "add AI Foundry" |
 | **Testing** | "test AI gateway", "call OpenAI through gateway" |
-
----
-
-## Architecture
-
-```
-            ┌─────────────┐  ┌─────────────┐  ┌─────────────┐
-            │   Users     │  │   Agents    │  │   Apps      │
-            └──────┬──────┘  └──────┬──────┘  └──────┬──────┘
-                   │                │                │
-                   ▼                ▼                ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    AI Gateway (APIM)                            │
-│                 Secure • Observe • Control                      │
-├─────────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐              │
-│  │   Models    │  │    Tools    │  │   Agents    │              │
-│  ├─────────────┤  ├─────────────┤  ├─────────────┤              │
-│  │ Token Limits│  │ Rate Limits │  │Content Safety│             │
-│  │ Sem. Cache  │  │ Auth/AuthZ  │  │Jailbreak Det.│             │
-│  │ Load Balance│  │ Quotas      │  │ Filtering   │              │
-│  └─────────────┘  └─────────────┘  └─────────────┘              │
-└─────────────────────────────────────────────────────────────────┘
-         │                   │                   │
-         ▼                   ▼                   ▼
-   ┌──────────┐        ┌──────────┐       ┌──────────┐
-   │Azure AOAI│        │MCP Server│       │AI Agents │
-   │AI Foundry│        │Tool APIs │       │ Backends │
-   │Custom LLM│        │Functions │       │ Services │
-   └──────────┘        └──────────┘       └──────────┘
-      Models              Tools              Agents
-```
 
 ---
 
